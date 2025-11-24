@@ -2,3 +2,9 @@
 @plugin "daisyui" {
   themes: light --default, dark, cupcake;
 }
+
+body{
+  background: linear-gradient(135deg, #0d0f1a 0%, #111527 40%, #0a0c18 100%);
+  color: white;
+  min-height: 100vh;
+}
