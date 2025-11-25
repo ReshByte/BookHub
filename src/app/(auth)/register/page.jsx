@@ -56,7 +56,7 @@ const RegisterPage = () => {
     }
 
     try {
-      // const image_hosting_key = "271869a6b9ececa3a8f8f741c63e00f5";
+      
       const image_hosting_api = `https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_image_hosting_key}`;
 
       const formData = new FormData();
