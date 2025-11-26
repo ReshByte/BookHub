@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -21,7 +22,7 @@ const LoginPage = () => {
       Swal.fire({
         position: "center",
         icon: "success",
-        title: "Login Succesfull",
+        title: "Login Successful",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -42,7 +43,7 @@ const LoginPage = () => {
       Swal.fire({
         position: "center",
         icon: "success",
-        title: "Login Succesfull",
+        title: "Login Successful",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -53,97 +54,88 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950 text-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-96 h-96 bg-teal-900/20 rounded-full blur-3xl mix-blend-screen"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-900/20 rounded-full blur-3xl mix-blend-screen"></div>
-
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      {/* Back link */}
       <Link
         href="/"
-        className="absolute top-8 left-8 flex items-center gap-2 text-slate-400 hover:text-amber-500 transition-colors z-20"
+        className="absolute top-6 left-6 flex items-center gap-2 text-gray-500 hover:text-pink-500 transition-colors"
       >
         <FaArrowLeft /> Back to Home
       </Link>
 
-      <div className="w-full max-w-5xl h-full md:h-[600px] grid grid-cols-1 md:grid-cols-2 bg-slate-900/50 backdrop-blur-lg border border-slate-800 rounded-2xl shadow-2xl overflow-hidden m-4">
+      {/* Card container */}
+      <div className="w-full max-w-4xl bg-white shadow-xl rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+        {/* Left Image */}
         <div
-          className="hidden md:flex flex-col justify-between p-10 bg-cover bg-center relative"
+          className="hidden md:block relative"
           style={{
             backgroundImage:
               "url('https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1000&auto=format&fit=crop')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
-
-          <div className="relative z-10">
-            <h2 className="text-4xl font-bold text-white font-serif">
-              Welcome to <br /> <span className="text-amber-500">BookHub</span>
-            </h2>
-          </div>
-
-          <div className="relative z-10">
-            <p className="text-slate-300 italic text-lg">
-              Reading is essential for those who seek to rise above the
-              ordinary.
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/50 to-transparent"></div>
+          <div className="absolute bottom-8 left-6 text-white z-10">
+            <h2 className="text-3xl font-bold">Welcome Back!</h2>
+            <p className="mt-2 text-sm italic opacity-80">
+              “Reading is essential for those who seek to rise above the ordinary.” – Jim Rohn
             </p>
-            <p className="text-slate-400 text-sm mt-2">- Jim Rohn</p>
           </div>
         </div>
 
-        <div className="flex flex-col justify-center p-8 md:p-12 w-full">
-          <div className="mb-8 text-center md:text-left">
-            <h3 className="text-3xl font-bold text-white">Sign In</h3>
-            <p className="text-slate-400 mt-2">Access your digital library</p>
-          </div>
+        {/* Right Form */}
+        <div className="flex flex-col justify-center p-8 md:p-12">
+          <h3 className="text-2xl font-bold text-gray-800 mb-1">Sign In</h3>
+          <p className="text-gray-500 mb-6">Access your digital library</p>
 
+          {/* Google Login */}
           <button
             onClick={handleGoogleSignIn}
-            className="btn btn-outline w-full border-slate-700 text-white hover:bg-slate-800 hover:border-slate-600 normal-case flex items-center gap-3 mb-6"
+            className="flex items-center justify-center gap-2 w-full border border-gray-300 rounded-md py-2 mb-4 hover:bg-gray-100 transition"
           >
-            <FaGoogle className="text-amber-500" />
-            Continue with Google
+            <FaGoogle className="text-red-500" /> Continue with Google
           </button>
 
-          <div className="divider divider-start text-slate-600 text-xs mb-6">
-            OR LOGIN WITH EMAIL
+          <div className="flex items-center text-gray-400 text-sm mb-4">
+            <span className="flex-grow border-t border-gray-300"></span>
+            <span className="mx-2">OR</span>
+            <span className="flex-grow border-t border-gray-300"></span>
           </div>
 
+          {/* Email Login Form */}
           <form onSubmit={handleLogin} className="space-y-4">
-            <div className="form-control">
-              <label className="label text-xs text-slate-400 font-semibold">
-                EMAIL ADDRESS
+            <div className="flex flex-col">
+              <label htmlFor="email" className="text-sm font-medium text-gray-600">
+                Email Address
               </label>
               <input
                 type="email"
                 name="email"
                 placeholder="you@example.com"
-                className="input input-bordered bg-slate-950/50 border-slate-700 focus:border-amber-500 text-white w-full"
                 required
+                className="mt-1 border border-gray-300 rounded-md p-2 focus:ring-pink-400 focus:border-pink-400 outline-none"
               />
             </div>
 
-            <div className="form-control relative">
-              <div className="flex justify-between items-center mb-1">
-                <label className="label text-xs text-slate-400 font-semibold">
-                  PASSWORD
-                </label>
-                <Link
-                  href="#"
-                  className="text-xs text-amber-500 hover:underline"
-                >
-                  Forgot Password?
+            <div className="flex flex-col relative">
+              <label htmlFor="password" className="text-sm font-medium text-gray-600 flex justify-between items-center">
+                Password
+                <Link href="#" className="text-pink-500 text-xs hover:underline">
+                  Forgot?
                 </Link>
-              </div>
+              </label>
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="••••••••"
-                className="input input-bordered bg-slate-950/50 border-slate-700 focus:border-amber-500 text-white w-full pr-10"
                 required
+                className="mt-1 border border-gray-300 rounded-md p-2 pr-10 focus:ring-pink-400 focus:border-pink-400 outline-none"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-[34px] text-slate-500 hover:text-white transition-colors"
+                className="absolute right-2 top-9 text-gray-400 hover:text-gray-700 transition"
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </button>
@@ -151,18 +143,15 @@ const LoginPage = () => {
 
             <button
               type="submit"
-              className="btn bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white border-none w-full mt-2 shadow-lg shadow-amber-900/20"
+              className="w-full py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-md font-semibold shadow"
             >
               Sign In
             </button>
           </form>
 
-          <p className="text-center text-slate-400 text-sm mt-8">
-            Don&apos;t have an account?{" "}
-            <Link
-              href="/register"
-              className="text-amber-500 font-semibold hover:underline"
-            >
+          <p className="text-center text-gray-500 text-sm mt-6">
+            Don’t have an account?{" "}
+            <Link href="/register" className="text-pink-500 font-semibold hover:underline">
               Register
             </Link>
           </p>

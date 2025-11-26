@@ -11,12 +11,7 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_appId
 };
 
-//  AIzaSyAXiKAYzr2ntDV7zzKHzTIIt-p8LVGZ9tU
-//  first-next-auth-90569.firebaseapp.com
-//  first-next-auth-90569
-//  first-next-auth-90569.firebasestorage.app
-//  768167303998
-//  1:768167303998:web:5c9779337152af1f19ea6f
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
