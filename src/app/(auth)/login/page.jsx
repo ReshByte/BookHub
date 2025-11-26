@@ -92,7 +92,7 @@ const LoginPage = () => {
           {/* Google Login */}
           <button
             onClick={handleGoogleSignIn}
-            className="flex items-center justify-center gap-2 w-full border border-gray-300 rounded-md py-2 mb-4 hover:bg-gray-100 transition"
+            className="flex items-center text-black justify-center gap-2 w-full border border-gray-300 rounded-md py-2 mb-4 hover:bg-gray-100 transition"
           >
             <FaGoogle className="text-red-500" /> Continue with Google
           </button>

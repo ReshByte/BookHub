@@ -84,34 +84,34 @@ export default function AddBooks() {
 
   return (
     <PrivateRoute>
-      <div className="min-h-screen bg-slate-950 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-pink-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 mt-10">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            Add a New <span className="text-amber-500">Book</span>
+          <h2 className="text-3xl font-extrabold text-pink-900 sm:text-4xl">
+            Add a New <span className="text-pink-500">Book</span>
           </h2>
-          <p className="mt-2 text-lg text-slate-400">Share a new masterpiece with the community</p>
+          <p className="mt-2 text-lg text-pink-700/80">Share a new masterpiece with the community</p>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-slate-900/50 backdrop-blur-md border border-slate-800 rounded-2xl shadow-2xl p-8">
+        <div className="max-w-4xl mx-auto bg-pink-100/60 backdrop-blur-md border border-pink-200 rounded-2xl shadow-lg p-8">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="form-control">
-                <label className="label text-slate-300 font-medium">Book Title</label>
+                <label className="label text-pink-800 font-medium">Book Title</label>
                 <input
                   type="text"
                   placeholder="e.g. The Alchemist"
                   {...register("title", { required: true })}
-                  className="input input-bordered bg-slate-800 border-slate-700 text-white focus:border-amber-500 focus:ring-1 focus:ring-amber-500 w-full"
+                  className="input input-bordered border-pink-300 focus:border-pink-500 focus:ring-1 focus:ring-pink-400 w-full bg-white"
                 />
                 {errors.title && <span className="text-red-500 text-xs">Title is required</span>}
               </div>
 
               <div className="form-control">
-                <label className="label text-slate-300 font-medium">Category</label>
+                <label className="label text-pink-800 font-medium">Category</label>
                 <select
                   {...register("category", { required: true })}
-                  className="select select-bordered bg-slate-800 border-slate-700 text-white w-full"
+                  className="select select-bordered border-pink-300 w-full bg-white"
                   defaultValue=""
                 >
                   <option disabled value="">Select Category</option>
@@ -128,44 +128,44 @@ export default function AddBooks() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="form-control">
-                <label className="label text-slate-300 font-medium">Author Name</label>
+                <label className="label text-pink-800 font-medium">Author Name</label>
                 <input
                   type="text"
                   defaultValue={user?.displayName}
                   readOnly
-                  className="input input-bordered bg-slate-800/50 border-slate-700 text-slate-400 cursor-not-allowed w-full"
+                  className="input input-bordered border-pink-300 bg-pink-50 text-pink-600 cursor-not-allowed w-full"
                 />
               </div>
 
               <div className="form-control">
-                <label className="label text-slate-300 font-medium">Author Email</label>
+                <label className="label text-pink-800 font-medium">Author Email</label>
                 <input
                   type="email"
                   defaultValue={user?.email}
                   readOnly
-                  className="input input-bordered bg-slate-800/50 border-slate-700 text-slate-400 cursor-not-allowed w-full"
+                  className="input input-bordered border-pink-300 bg-pink-50 text-pink-600 cursor-not-allowed w-full"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="form-control">
-                <label className="label text-slate-300 font-medium">Price ($)</label>
+                <label className="label text-pink-800 font-medium">Price ($)</label>
                 <input
                   type="number"
                   step="0.01"
                   {...register("price", { required: true })}
-                  className="input input-bordered bg-slate-800 border-slate-700 text-white w-full"
+                  className="input input-bordered border-pink-300 w-full bg-white"
                 />
               </div>
 
               <div className="form-control">
-                <label className="label text-slate-300 font-medium flex items-center gap-2">
-                  Rating <FaStar className="text-amber-400 text-xs" />
+                <label className="label text-pink-800 font-medium flex items-center gap-2">
+                  Rating <FaStar className="text-yellow-400 text-xs" />
                 </label>
                 <select
                   {...register("rating", { required: true })}
-                  className="select select-bordered bg-slate-800 border-slate-700 text-white w-full"
+                  className="select select-bordered border-pink-300 w-full bg-white"
                   defaultValue="5"
                 >
                   <option value="5">5 - Excellent</option>
@@ -178,17 +178,17 @@ export default function AddBooks() {
             </div>
 
             <div className="form-control">
-              <label className="label text-slate-300 font-medium">Book Cover</label>
+              <label className="label text-pink-800 font-medium">Book Cover</label>
 
-              <div className="tabs tabs-boxed w-full bg-slate-800/50 border border-slate-700">
+              <div className="tabs tabs-boxed w-full bg-pink-50 border border-pink-300">
                 <a
-                  className={`tab flex-1 ${imageTab === "upload" ? "tab-active bg-amber-600 text-white" : "text-slate-300"}`}
+                  className={`tab flex-1 ${imageTab === "upload" ? "tab-active bg-pink-400 text-white" : "text-pink-600"}`}
                   onClick={() => setImageTab("upload")}
                 >
                   Upload
                 </a>
                 <a
-                  className={`tab flex-1 ${imageTab === "url" ? "tab-active bg-amber-600 text-white" : "text-slate-300"}`}
+                  className={`tab flex-1 ${imageTab === "url" ? "tab-active bg-pink-400 text-white" : "text-pink-600"}`}
                   onClick={() => setImageTab("url")}
                 >
                   URL
@@ -196,7 +196,7 @@ export default function AddBooks() {
               </div>
 
               {imageTab === "upload" && (
-                <div className="relative border-2 border-dashed border-slate-700 rounded-lg p-8 mt-4 bg-slate-800/30 text-center cursor-pointer">
+                <div className="relative border-2 border-dashed border-pink-300 rounded-lg p-8 mt-4 bg-pink-50 text-center cursor-pointer">
                   <input
                     type="file"
                     accept="image/*"
@@ -204,8 +204,8 @@ export default function AddBooks() {
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                   />
                   <div className="flex flex-col items-center gap-3">
-                    <FaCloudUploadAlt className="text-4xl text-slate-400" />
-                    <p className="text-sm text-slate-400">Click to upload</p>
+                    <FaCloudUploadAlt className="text-4xl text-pink-300" />
+                    <p className="text-sm text-pink-500">Click to upload</p>
                   </div>
                 </div>
               )}
@@ -215,24 +215,24 @@ export default function AddBooks() {
                   type="text"
                   placeholder="https://example.com/image.jpg"
                   {...register("imageURL")}
-                  className="input input-bordered bg-slate-800 border-slate-700 text-white w-full mt-4"
+                  className="input input-bordered border-pink-300 w-full mt-4 bg-white"
                 />
               )}
             </div>
 
             <div className="form-control">
-              <label className="label text-slate-300 font-medium">Description</label>
+              <label className="label text-pink-800 font-medium">Description</label>
               <textarea
                 rows="4"
                 {...register("description", { required: true })}
-                className="textarea textarea-bordered bg-slate-800 border-slate-700 text-white w-full h-32"
+                className="textarea textarea-bordered border-pink-300 w-full bg-white"
               ></textarea>
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="btn w-full bg-gradient-to-r from-amber-600 to-orange-600 text-white text-lg font-bold"
+              className="btn w-full bg-gradient-to-r from-pink-400 to-pink-500 text-white text-lg font-bold"
             >
               {loading ? <span className="loading loading-dots loading-md"></span> : "Add Book to Collection"}
             </button>
