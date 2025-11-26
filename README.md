@@ -1,4 +1,4 @@
-📚 BookHub - Online Library & Book Store
+📚 ReadRiot - Online Library & Book Store
 
 BookHub is a modern, responsive, and full-stack web application built with Next.js and Express.js. It serves as an online platform where users can browse books, view details, and manage their own book collections. The application features a premium UI with dark mode aesthetics, secure authentication, and real-time data management.
 
