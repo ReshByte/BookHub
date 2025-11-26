@@ -102,7 +102,7 @@ export default function AddBooks() {
                   type="text"
                   placeholder="e.g. The Alchemist"
                   {...register("title", { required: true })}
-                  className="input input-bordered border-pink-300 focus:border-pink-500 focus:ring-1 focus:ring-pink-400 w-full bg-white"
+                  className="input input-bordered border-pink-300 focus:border-pink-500 focus:ring-1 focus:ring-pink-400 w-full bg-white text-pink-900 placeholder-pink-400"
                 />
                 {errors.title && <span className="text-red-500 text-xs">Title is required</span>}
               </div>
@@ -111,7 +111,7 @@ export default function AddBooks() {
                 <label className="label text-pink-800 font-medium">Category</label>
                 <select
                   {...register("category", { required: true })}
-                  className="select select-bordered border-pink-300 w-full bg-white"
+                  className="select select-bordered border-pink-300 w-full bg-white text-pink-900"
                   defaultValue=""
                 >
                   <option disabled value="">Select Category</option>
@@ -133,7 +133,7 @@ export default function AddBooks() {
                   type="text"
                   defaultValue={user?.displayName}
                   readOnly
-                  className="input input-bordered border-pink-300 bg-pink-50 text-pink-600 cursor-not-allowed w-full"
+                  className="input input-bordered border-pink-300 bg-pink-50 text-pink-700 cursor-not-allowed w-full"
                 />
               </div>
 
@@ -143,7 +143,7 @@ export default function AddBooks() {
                   type="email"
                   defaultValue={user?.email}
                   readOnly
-                  className="input input-bordered border-pink-300 bg-pink-50 text-pink-600 cursor-not-allowed w-full"
+                  className="input input-bordered border-pink-300 bg-pink-50 text-pink-700 cursor-not-allowed w-full"
                 />
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function AddBooks() {
                   type="number"
                   step="0.01"
                   {...register("price", { required: true })}
-                  className="input input-bordered border-pink-300 w-full bg-white"
+                  className="input input-bordered border-pink-300 w-full bg-white text-pink-900 placeholder-pink-400"
                 />
               </div>
 
@@ -165,7 +165,7 @@ export default function AddBooks() {
                 </label>
                 <select
                   {...register("rating", { required: true })}
-                  className="select select-bordered border-pink-300 w-full bg-white"
+                  className="select select-bordered border-pink-300 w-full bg-white text-pink-900"
                   defaultValue="5"
                 >
                   <option value="5">5 - Excellent</option>
@@ -215,7 +215,7 @@ export default function AddBooks() {
                   type="text"
                   placeholder="https://example.com/image.jpg"
                   {...register("imageURL")}
-                  className="input input-bordered border-pink-300 w-full mt-4 bg-white"
+                  className="input input-bordered border-pink-300 w-full mt-4 bg-white text-pink-900 placeholder-pink-400"
                 />
               )}
             </div>
@@ -225,7 +225,7 @@ export default function AddBooks() {
               <textarea
                 rows="4"
                 {...register("description", { required: true })}
-                className="textarea textarea-bordered border-pink-300 w-full bg-white"
+                className="textarea textarea-bordered border-pink-300 w-full bg-white text-pink-900 placeholder-pink-400"
               ></textarea>
             </div>
 
