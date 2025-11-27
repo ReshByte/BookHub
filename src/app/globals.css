@@ -3,6 +3,14 @@
   themes: light --default, dark, cupcake;
 }
 
+@layer base {
+  @property --radialProgress {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 0%;
+  }
+}
+
 body{
   background: linear-gradient(135deg, #0d0f1a 0%, #111527 40%, #0a0c18 100%);
   color: white;
