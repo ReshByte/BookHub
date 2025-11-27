@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "zap-shift-57e27"
-  }
+    "default": "first-next-auth-90569",
+    "dist": "first-next-auth-90569",
+    "myApp": "first-next-auth-90569"
+  },
+  "targets": {},
+  "etags": {}
 }
