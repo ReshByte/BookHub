@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_apiKey,
-  authDomain: process.env.NEXT_PUBLIC_authDomain,
-  projectId: process.env.NEXT_PUBLIC_projectId,
-  storageBucket: process.env.NEXT_PUBLIC_storageBucket,
-  messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
-  appId: process.env.NEXT_PUBLIC_appId
+ apiKey: "AIzaSyAXiKAYzr2ntDV7zzKHzTIIt-p8LVGZ9tU",
+  authDomain: "first-next-auth-90569.firebaseapp.com",
+  projectId: "first-next-auth-90569",
+  storageBucket: "first-next-auth-90569.firebasestorage.app",
+  messagingSenderId: "768167303998",
+  appId: "1:768167303998:web:7835b2fb2c4a94af19ea6f"
 };
 
 
